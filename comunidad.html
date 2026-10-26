@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - Ludopati</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <h1 class="nav__logo">🎮 Ludopati</h1>
+            </div>
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="catalogo.html" class="nav__link">Catálogo</a>
+                </li>
+                <li class="nav__item">
+                    <a href="comunidad.html" class="nav__link nav__link--active">Comunidad</a>
+                </li>
+                <li class="nav__item">
+                    <a href="carrito.html" class="nav__link">
+                        Carrito <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav__auth" id="navAuth">
+                <a href="login.html" class="btn btn--secondary">Iniciar Sesión</a>
+                <a href="registro.html" class="btn btn--primary">Registrarse</a>
+            </div>
+            <div class="nav__user" id="navUser" style="display: none;">
+                <span class="nav__username" id="navUsername"></span>
+                <button class="btn btn--secondary" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+            <button class="nav__toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="page__header">
+        <div class="container">
+            <h1 class="page__title">Comunidad</h1>
+            <p class="page__subtitle">Conecta con otros jugadores y añade amigos</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="community__header">
+                <h2>Jugadores Registrados</h2>
+                <div class="community__stats" id="communityStats">Cargando...</div>
+            </div>
+            <div class="users__grid" id="usersGrid">
+                <!-- Users will be loaded by JavaScript -->
+            </div>
+            <div id="loginToCommunity" style="text-align: center; padding: 2rem; background-color: var(--bg-card); border-radius: var(--border-radius); border: 1px solid var(--border-color); margin-top: 2rem;">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Debes iniciar sesión para ver la comunidad y añadir amigos</p>
+                <a href="login.html" class="btn btn--primary">Iniciar Sesión</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/comunidad.js"></script>
+</body>
+</html>

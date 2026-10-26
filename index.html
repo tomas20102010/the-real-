@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludopati - Tienda de Juegos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <h1 class="nav__logo">🎮 Ludopati</h1>
+            </div>
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link nav__link--active">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="catalogo.html" class="nav__link">Catálogo</a>
+                </li>
+                <li class="nav__item">
+                    <a href="comunidad.html" class="nav__link">Comunidad</a>
+                </li>
+                <li class="nav__item">
+                    <a href="carrito.html" class="nav__link">
+                        Carrito <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav__auth" id="navAuth">
+                <a href="login.html" class="btn btn--secondary">Iniciar Sesión</a>
+                <a href="registro.html" class="btn btn--primary">Registrarse</a>
+            </div>
+            <div class="nav__user" id="navUser" style="display: none;">
+                <span class="nav__username" id="navUsername"></span>
+                <button class="btn btn--secondary" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+            <button class="nav__toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">Descubre los Mejores Juegos</h2>
+                <p class="hero__subtitle">Compra, reseña y conecta con otros gamers en Ludopati</p>
+                <a href="catalogo.html" class="btn btn--primary btn--large">Ver Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Games -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">Juegos Populares</h2>
+            <div class="games__grid" id="popularGamesGrid">
+                <!-- Games will be loaded by JavaScript -->
+            </div>
+            <div class="section__footer">
+                <a href="catalogo.html" class="btn btn--secondary">Ver Todos los Juegos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="section__title">¿Por qué elegir Ludopati?</h2>
+            <div class="features__grid">
+                <div class="feature__card">
+                    <div class="feature__icon">🛒</div>
+                    <h3 class="feature__title">Compra Fácil</h3>
+                    <p class="feature__description">Añade juegos al carrito y compra con un solo click</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">⭐</div>
+                    <h3 class="feature__title">Reseñas Reales</h3>
+                    <p class="feature__description">Lee y escribe reseñas de la comunidad gamer</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">👥</div>
+                    <h3 class="feature__title">Comunidad</h3>
+                    <p class="feature__description">Conecta con otros jugadores, añade amigos y comparte experiencias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

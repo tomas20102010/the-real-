@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - Ludopati</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <h1 class="nav__logo">🎮 Ludopati</h1>
+            </div>
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link">Inicio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="catalogo.html" class="nav__link">Catálogo</a>
+                </li>
+                <li class="nav__item">
+                    <a href="comunidad.html" class="nav__link">Comunidad</a>
+                </li>
+                <li class="nav__item">
+                    <a href="carrito.html" class="nav__link">
+                        Carrito <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav__auth" id="navAuth">
+                <a href="login.html" class="btn btn--secondary">Iniciar Sesión</a>
+                <a href="registro.html" class="btn btn--primary">Registrarse</a>
+            </div>
+            <div class="nav__user" id="navUser" style="display: none;">
+                <span class="nav__username" id="navUsername"></span>
+                <button class="btn btn--secondary" id="logoutBtn">Cerrar Sesión</button>
+            </div>
+            <button class="nav__toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="game__detail" id="gameDetail">
+                <!-- Game details will be loaded by JavaScript -->
+            </div>
+            
+            <!-- Reviews Section -->
+            <div class="reviews__section">
+                <h2 class="section__title" style="text-align: left; margin-top: 3rem;">Reseñas</h2>
+                
+                <!-- Review Form (only for logged in users) -->
+                <div id="reviewFormContainer" style="display: none;">
+                    <div class="review__form">
+                        <h3 style="margin-bottom: 1rem;">Escribir una Reseña</h3>
+                        <div class="form__group">
+                            <label class="form__label">Calificación</label>
+                            <div class="review__stars" id="starRating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="ratingValue" value="0">
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label" for="reviewComment">Comentario</label>
+                            <textarea id="reviewComment" class="form__textarea" placeholder="Comparte tu experiencia con este juego..."></textarea>
+                        </div>
+                        <button class="btn btn--primary" id="submitReview">Enviar Reseña</button>
+                        <div id="reviewAlert" style="margin-top: 1rem;"></div>
+                    </div>
+                </div>
+                
+                <div id="loginToReview" style="text-align: center; padding: 2rem; background-color: var(--bg-card); border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Debes iniciar sesión para escribir una reseña</p>
+                    <a href="login.html" class="btn btn--primary">Iniciar Sesión</a>
+                </div>
+                
+                <!-- Reviews List -->
+                <div id="reviewsList">
+                    <!-- Reviews will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/juego.js"></script>
+</body>
+</html>
